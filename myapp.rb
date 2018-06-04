@@ -16,10 +16,11 @@ get '/ciao' do
   @second_input = params["second_input"].to_i
   @ops = params["ops"]
 
-  require_relative 'calculator'
+  require './calculator'
 
   @r = Calculator.new
   @result = @r.calculate
+  binding.pry
 
   # case @ops
   # when 'sum'
