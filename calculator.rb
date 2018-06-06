@@ -1,28 +1,23 @@
 require 'pry'
 class Calculator
+attr_accessor :fi, :si, :op
 
-  attr_accessor :first_input, :second_input
-  def intialize (first_input, second_input)
+def initialize (fi, si, op)
+  @fi = fi
+  @si = si
+  @op = op
+end
 
-    @first_input = first_input
-    binding.pry
-    @second_input = second_input
-    binding.pry
-
-
-  end
-
-  def calculate (ops)
-    case ops
+  def calculate
+    case op
     when 'sum'
-      return @first_input + @second_input
-    when 'min'
-      return  @first_input - @second_input
+      fi + si
+    when 'sub'
+      fi - si
     when 'tim'
-      return  @first_input * @second_input
+      fi * si
     when 'div'
-      return  @first_input / @second_input
+      fi / si
     end
   end
-
 end

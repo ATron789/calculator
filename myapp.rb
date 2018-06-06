@@ -10,28 +10,14 @@ end
 get '/ciao' do
 
   @title = 'Results'
-
-  # binding.pry
-  @first_input = params["first_input"].to_i
-  @second_input = params["second_input"].to_i
+  @first_input = params["first_input"].to_f
+  @second_input = params["second_input"].to_f
   @ops = params["ops"]
 
   require './calculator'
 
-  @r = Calculator.new
-  @result = @r.calculate
-  binding.pry
-
-  # case @ops
-  # when 'sum'
-  #   @result = @first_input + @second_input
-  # when 'min'
-  #   @result = @first_input - @second_input
-  # when 'tim'
-  #   @result =  @first_input * @second_input
-  # when 'div'
-  #   @result = @first_input / @second_input
-  # end
+  @result = Calculator.new(@first_input, @second_input, @ops).calculate
+  # binding.pry
 
   erb :ciao
 end
