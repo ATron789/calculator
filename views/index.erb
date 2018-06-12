@@ -1,17 +1,23 @@
 <form action='ciao' method='get'>
   <div id='inputs' align='center'>
-    <input type='text' name='first_input' >
-    <input type='text' name='second_input' ><br/>
+    <input type='text' name='fi' >
+    <select name="op" size="4">
+      <option value="sum">Plus</option>
+      <option value="min">Minus</option>
+      <option value="tim">Times</option>
+      <option value="div">Divide by</option>
+    </select>
+    <input type='text' name='si' ><br/>
     <br/>
   </div>
 
-  <div id='ops' align='center'>
-    <input type='radio' name='ops' value='sum'>Sum</input>
-    <input type='radio' name='ops' value='min'>Subtraction</input><br/>
-    <input type='radio' name='ops' value='tim'>Multiply</input>
-    <input type='radio' name='ops' value='div'>Division</input><br/>
+  <!-- <div id='ops' align='center'>
+    <input type='radio' name='op' value='sum'>Sum</input>
+    <input type='radio' name='op' value='min'>Subtraction</input><br/>
+    <input type='radio' name='op' value='tim'>Multiply</input>
+    <input type='radio' name='op' value='div'>Division</input><br/>
     <br/>
-  </div>
+  </div> -->
 
   <div id='ops' align='center'>
     <input type='submit' value='DIO SERPENTE AVVELENATO'>

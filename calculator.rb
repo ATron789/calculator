@@ -1,4 +1,3 @@
-require 'pry'
 class Calculator
 attr_accessor :fi, :si, :op
 
