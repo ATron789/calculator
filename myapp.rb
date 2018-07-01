@@ -67,16 +67,20 @@ post '/signout' do
   redirect '/login'
 end
 
-get '/ciao' do
-
-  @title = 'Results'
-  @fi = params["fi"].to_f
-  @si = params["si"].to_f
-  @op = params["op"]
-
-  require './calculator'
-
-  @result = Calculator.new(@fi, @si, @op).calculate
-
-  erb :ciao
+get '/results' do
+  if @@current_user
+    if params["fi"] && params["si"] && params["op"]
+      @title = 'Results'
+      @fi = params["fi"].to_f
+      @si = params["si"].to_f
+      @op = params["op"]
+      require './calculator'
+      @result = Calculator.new(@fi, @si, @op).calculate
+      erb :results
+    else
+      redirect '/home'
+    end
+  else
+    redirect '/login'
+  end
 end
