@@ -1,14 +1,17 @@
 <div id='login' align='center'>
-  <form action='home' method='post'>
+  <form action='login' method='post'>
     <input type='text' name='user' >
     <input type='password' name='password' ><br/>
     <br/>
     <input type='submit' value='DIO SERPENTE AVVELENATO'>
   </form>
 </div>
-
-<div id='createlog' align = 'left'>
-  <form action="/account" method ="get" >
-      <input type="submit" value="create account" />
+<br/>
+<div id='createlog' align='center'>
+  <form action="registration" method ="get" >
+    <% if @@login_attempts > 0 %>
+    <p style="color: red"> Wrong username/password </p>
+    <% end %>
+    <input type="submit" value="create account" />
   </form>
 </div>
